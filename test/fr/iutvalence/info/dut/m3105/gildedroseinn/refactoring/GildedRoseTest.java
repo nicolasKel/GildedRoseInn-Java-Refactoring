@@ -20,4 +20,15 @@ public class GildedRoseTest
 		assertEquals(item.getQuality(), 19);
 		assertEquals(item.getSellIn(), 9);
 	}
+	
+	@Test
+	public void updateAnItemWithSellInLowerThanZeroShouldLowersItsQualityByTwoEveryDay()
+	{
+		Item item = new Item("+5 Test item", -1, 12);
+		
+		GildedRose.updateItem(item);
+		
+		assertEquals(item.getQuality(), 10);
+		assertEquals(item.getSellIn(), -2);
+	}
 }

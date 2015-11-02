@@ -33,6 +33,7 @@ public class GildedRose
 	public static void updateItem(Item item) 
 	{
 		item.setQuality(item.getQuality()-1);
+		
 		item.setSellIn(item.getSellIn()-1);
 	}
 }
