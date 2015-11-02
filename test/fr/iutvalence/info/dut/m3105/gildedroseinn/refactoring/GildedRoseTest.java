@@ -35,4 +35,14 @@ public class GildedRoseTest
 		assertEquals(item.getSellIn(), -2);
 	}
 	
+	@Test
+	public void updateAnItemWithAnUpdatedQualityLowerThanZeroShouldSetItToZero()
+	{
+		
+		item = new Item("Magic test item", 10, 0);
+		
+		assertEquals(item.getQuality(), 0);
+		assertEquals(item.getSellIn(), 9);
+	}
+	
 }
