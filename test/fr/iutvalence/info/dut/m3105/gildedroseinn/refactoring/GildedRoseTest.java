@@ -9,11 +9,14 @@ import org.junit.Test;
 
 public class GildedRoseTest 
 {
+	private Item item;
+	
+	
 	
 	@Test
 	public void updateAnItemShouldLowersItsQualityByOneEveryDay()
 	{
-		Item item = new Item("+5 Dexterity Vest", 10, 20);
+		item = new Item("Magic test item", 10, 20);
 		
 		GildedRose.updateItem(item);
 		
@@ -22,13 +25,14 @@ public class GildedRoseTest
 	}
 	
 	@Test
-	public void updateAnItemWithSellInLowerThanZeroShouldLowersItsQualityByTwoEveryDay()
+	public void updateAnItemWithNegativeSellInShouldLowersItsQualityByTwoEveryDay()
 	{
-		Item item = new Item("+5 Test item", -1, 12);
+		item = new Item("Magic test item", -1, 12);
 		
 		GildedRose.updateItem(item);
 		
 		assertEquals(item.getQuality(), 10);
 		assertEquals(item.getSellIn(), -2);
 	}
+	
 }
