@@ -41,6 +41,8 @@ public class GildedRoseTest
 		
 		item = new Item("Magic test item", 10, 0);
 		
+		GildedRose.updateItem(item);
+		
 		assertEquals(item.getQuality(), 0);
 		assertEquals(item.getSellIn(), 9);
 	}

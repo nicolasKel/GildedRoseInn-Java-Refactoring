@@ -23,20 +23,15 @@ public class GildedRose
 		items.add(new Item("Conjured Mana Cake", 3, 6));
 
 	}*/
-	
-	
-	public static void main(String[] args)
-	{
-		
-	}
 
 	public static void updateItem(Item item) 
 	{
+		item.setSellIn(item.getSellIn()-1);
+		item.setQuality(item.getQuality()-1);
+		
 		if (item.getSellIn() < 0)
-			item.setQuality(item.getQuality()-2);
-		else
 			item.setQuality(item.getQuality()-1);
 		
-		item.setSellIn(item.getSellIn()-1);
+		if (item.getQuality() < 0) item.setQuality(0);
 	}
 }
