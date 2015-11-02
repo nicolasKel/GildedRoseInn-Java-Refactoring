@@ -11,7 +11,7 @@ public class GildedRoseTest
 {
 	
 	@Test
-	void updateAnItemShouldLowersItsQualityByOneEveryDay()
+	public void updateAnItemShouldLowersItsQualityByOneEveryDay()
 	{
 		Item item = new Item("+5 Dexterity Vest", 10, 20);
 		
